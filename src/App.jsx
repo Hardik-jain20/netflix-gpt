@@ -1,14 +1,15 @@
 import { useState } from 'react'
-import './App.css'
+import Body from './components/Body'
+import Header from './components/Header'
+import Browse from './components/Browse'
+import Login from './components/Login'
 
-function App() {
+const App = () => {
 
   return (
-    <>
       <div>
-        <h1 className='text-4xl font-bold'>This is the app component.</h1>
+        <Body />
       </div>
-    </>
   )
 }
 
