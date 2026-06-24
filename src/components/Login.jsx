@@ -5,17 +5,22 @@ import { checkValidData } from "../utils/validate";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
+// import { useDispatch } from "react-redux";
+// import { addUser } from "../utils/userSlice";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [errmessage, setErrMessage] = useState(null);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const email = useRef(null);
   const pass = useRef(null);
+  const name = useRef(null);
 
   const toggleSigInForm = () => {
     setIsSignIn(!isSignIn);
@@ -38,8 +43,19 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
-          navigate("/browse");
+          updateProfile(user, {
+            displayName: name.current.value,
+          })
+            .then(() => {
+              // const { uid, email, displayName } = auth.currentUser;
+              // dispatch(
+              //   addUser({ uid: uid, email: email, displayName: displayName }),
+              // );
+              navigate("/browse");
+            })
+            .catch((error) => {
+              setErrMessage(error.message);
+            });
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -77,6 +93,7 @@ const Login = () => {
         </h1>
         {!isSignIn && (
           <input
+            ref={name}
             className="p-4 my-4 w-full bg-gray-800"
             type="text"
             placeholder="Full Name"
