@@ -15,7 +15,10 @@
 - Created Redux store with userSlice
 - Implemented Sign Out
 - Update Profile using uodate profile api(firebase)
+- Bug Fix: Sign Up user displayname updates
+- Bug Fix: If user is not login redirect him to login page and vice-versa
 - Fetch movies from TMDB Moviesm(API)
+-
 
 # Features
 
