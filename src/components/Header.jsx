@@ -22,7 +22,7 @@ const Header = () => {
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName } = user;
         dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
@@ -32,7 +32,11 @@ const Header = () => {
         navigate("/");
       }
     });
+
+    // unsubscribes when component unmounts
+    return () => unsubscribe();
   }, []);
+
   return (
     <div className="absolute w-screen px-8 py-2 bg-linear-to-b from-black z-10 flex justify-between">
       <img className="w-50" src={logo_URL} alt="logo" />

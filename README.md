@@ -17,8 +17,15 @@
 - Update Profile using uodate profile api(firebase)
 - Bug Fix: Sign Up user displayname updates
 - Bug Fix: If user is not login redirect him to login page and vice-versa
-- Fetch movies from TMDB Moviesm(API)
--
+- unsubscibed to the onAuthStateChange callback
+- Regiter at TMDB movie site and register to get api
+- Fetch movies data of now playing movie from TMDB Moviesm(API)
+- Custom hook for now Playing movie
+- Update store with movie data
+- Planning for main and secondary container
+- fetch data for trailer video and update the store with trailer data
+- Embedded the yt video and make it autoplay, mute, removed its control.
+- tailwind to make main container awesome.
 
 # Features
 
