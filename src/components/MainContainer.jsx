@@ -4,7 +4,7 @@ import Videotitle from "./Videotitle";
 import VideoBg from "./VideoBg";
 
 const MainContainer = () => {
-  const movies = useSelector((store) => store?.movie?.nowPlayingMovies);
+  const movies = useSelector((store) => store?.movies?.nowPlayingMovies);
   // if movies is empty like it didn't rendered till that continue the process
   if (!movies) return;
 

@@ -4,7 +4,7 @@ import { TriangleRightIcon } from "@primer/octicons-react";
 
 const Videotitle = ({ title, description, poster }) => {
   return (
-    <div className="pt-[20%] px-20 absolute text-white bg-linear-to-r from-black w-screen aspect-video">
+    <div className="pt-[20%] px-10 absolute text-white bg-linear-to-r from-black w-screen aspect-video">
       <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg shadow-gray-400">
         <img className="w-full h-full object-cover" src={poster_URL + poster} />
       </div>

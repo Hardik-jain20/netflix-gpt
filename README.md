@@ -26,6 +26,11 @@
 - fetch data for trailer video and update the store with trailer data
 - Embedded the yt video and make it autoplay, mute, removed its control.
 - tailwind to make main container awesome.
+- Build the secondary component
+- Built MovieList
+- Built MovieCard
+- Built MovieCard
+- Custom Hook: usePopularMovies, useTopRatedMovies, useUpcomingMovies
 
 # Features
 
@@ -49,3 +54,7 @@
 # Formik
 
 - It's a library for form creation in react
+
+# overflow-x-scroll
+
+- This features will maintain the element across screen and will allow you to scroll over x-axis to show rest of its components.
