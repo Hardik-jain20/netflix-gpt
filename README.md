@@ -31,6 +31,8 @@
 - Built MovieCard
 - Built MovieCard
 - Custom Hook: usePopularMovies, useTopRatedMovies, useUpcomingMovies
+- GPT search feature
+- Made App multi linguistic using config.jsx && lagConst.jsx
 
 # Features
 
