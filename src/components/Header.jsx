@@ -51,15 +51,16 @@ const Header = () => {
   }, []);
 
   return (
-    <div className="absolute w-screen px-8 py-2 bg-linear-to-b from-black z-10 flex justify-between">
-      <img className="w-50" src={logo_URL} alt="logo" />
+    <div className="absolute w-screen px-8 py-2 bg-linear-to-b from-black z-10 flex flex-col md:flex-row justify-between">
+      <img className="w-40 md:w-50 mx-auto md:mx-0" src={logo_URL} alt="logo" />
       {/* When user is there at that time only sign out button will show */}
       {user && (
-        <div className="flex p-2 justify-center cursor-pointer">
+        <div className="flex items-center justify-between md:justify-center md:p-2 md:pt-0">
           {showGPTSearch && (
             <select
-              className="p-2 bg-gray-900 text-white m-4 rounded-lg cursor-pointer "
+              className="p-2 bg-gray-900 text-white m-4 rounded-lg cursor-pointer"
               onChange={handleLangChange}
+              value={lang}
             >
               {Supported_Language.map((lang) => (
                 <option key={lang.identifier} value={lang.identifier}>
@@ -68,18 +69,19 @@ const Header = () => {
               ))}
             </select>
           )}
+
           <button
-            className="p-2 m-4 text-white bg-red-600 rounded-lg cursor-pointer"
+            className="p-2 m-4 text-white bg-red-600 rounded-lg cursor-pointer transition-all hover:bg-red-700"
             onClick={handleGPTSearchClick}
           >
             {!showGPTSearch ? "GPT Search" : "HomePage"}
           </button>
-          <SignOutIcon size={24} className="mt-5 text-white" />
           <button
             onClick={handleSignOut}
-            className="text-lg text-white m-2 cursor-pointer"
+            className="flex items-center gap-1.5 p-2 m-4 text-lg text-white cursor-pointer rounded-lg transition-all hover:text-gray-300"
           >
-            Sign Out
+            <SignOutIcon size={22} />
+            <span className="whitespace-nowrap">Sign Out</span>
           </button>
         </div>
       )}

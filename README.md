@@ -38,6 +38,7 @@
 - Removed those movie which do not have posters
 - Securing our API keys using .env file
 - Creating .env file and putting all sensitive info, api keys in this
+- Added .env file and updated .gitignore
 
 # Features
 
@@ -65,3 +66,7 @@
 # overflow-x-scroll
 
 - This features will maintain the element across screen and will allow you to scroll over x-axis to show rest of its components.
+
+# Mobile- Responsive Website
+
+- IN tailwind by default styling is done for mobile, sm is for greater than small devices[tablets] and md is for greater than medium devices[desktop].
