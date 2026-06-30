@@ -8,7 +8,7 @@ export const API_Options = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: "Bearer " + process.env.REACT_APP_TMDB_Key,
+    Authorization: "Bearer " + import.meta.env.VITE_TMDB_Key,
   },
 };
 
@@ -18,4 +18,4 @@ export const Supported_Language = [
   { identifier: "sp", name: "Spanish" },
 ];
 
-export const OPENAI_Key = process.env.REACT_APP_TMDB_Key;
+export const OPENAI_Key = import.meta.env.VITE_OPENAI_Key;
