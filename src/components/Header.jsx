@@ -12,6 +12,8 @@ import { changeLanguage } from "../utils/configSlice";
 const Header = () => {
   const user = useSelector((store) => store.user);
   const lang = useSelector((store) => store.config.lang);
+
+  const showGPTSearch = useSelector((store) => store.gpt.showGPTSearch);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleSignOut = () => {
@@ -54,21 +56,23 @@ const Header = () => {
       {/* When user is there at that time only sign out button will show */}
       {user && (
         <div className="flex p-2 justify-center cursor-pointer">
-          <select
-            className="p-2 bg-gray-900 text-white m-4 rounded-lg cursor-pointer "
-            onChange={handleLangChange}
-          >
-            {Supported_Language.map((lang) => (
-              <option key={lang.identifier} value={lang.identifier}>
-                {lang.name}
-              </option>
-            ))}
-          </select>
+          {showGPTSearch && (
+            <select
+              className="p-2 bg-gray-900 text-white m-4 rounded-lg cursor-pointer "
+              onChange={handleLangChange}
+            >
+              {Supported_Language.map((lang) => (
+                <option key={lang.identifier} value={lang.identifier}>
+                  {lang.name}
+                </option>
+              ))}
+            </select>
+          )}
           <button
             className="p-2 m-4 text-white bg-red-600 rounded-lg cursor-pointer"
             onClick={handleGPTSearchClick}
           >
-            GPT Search
+            {!showGPTSearch ? "GPT Search" : "HomePage"}
           </button>
           <SignOutIcon size={24} className="mt-5 text-white" />
           <button

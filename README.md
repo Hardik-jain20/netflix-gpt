@@ -33,6 +33,11 @@
 - Custom Hook: usePopularMovies, useTopRatedMovies, useUpcomingMovies
 - GPT search feature
 - Made App multi linguistic using config.jsx && lagConst.jsx
+- Integrated the power of openai
+- Developed GPT Search Page [Movie list and cards] - reused movielist component
+- Removed those movie which do not have posters
+- Securing our API keys using .env file
+- Creating .env file and putting all sensitive info, api keys in this
 
 # Features
 

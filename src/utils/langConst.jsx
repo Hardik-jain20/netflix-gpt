@@ -1,7 +1,7 @@
 const langConst = {
   en: {
     Search: "Search",
-    SearchBoxPlaceHolder: "What woould yu like to watch today ?",
+    SearchBoxPlaceHolder: "What would you like to watch today?",
   },
   hi: {
     Search: "खोज",
